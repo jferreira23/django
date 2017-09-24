@@ -1,9 +1,7 @@
-# arquivo onde as rotas sao configuradas
-# novo arquivo connectedin/perfis/urls.py
 from django.conf.urls import patterns, url
-from django.contrib import admin
 
 urlpatterns = patterns('',
-    url(r'^$', 'perfis.views.index'),
-    url(r'^perfis$', 'perfis.views.exibir'),
+	url(r'^$', 'perfis.views.index'),
+	#url(r'^$', index, name='index')
+	url(r'^perfis/(?P<perfil_id>\d+)$', 'perfis.views.exibir')
 )
