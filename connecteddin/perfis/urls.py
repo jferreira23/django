@@ -1,8 +1,7 @@
-# novo arquivo connectedin/perfis/urls.py
-
 from django.conf.urls import patterns, url
-from perfis import views.index
 
 urlpatterns = patterns('',
-    url(r'^$', index, 'perfis.views.index')
+	url(r'^$', 'perfis.views.index', name="index"),
+	#url(r'^$', index, name='index')
+	url(r'^perfis/(?P<perfil_id>\d+)$', 'perfis.views.exibir', name="exibir")
 )
